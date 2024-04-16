@@ -22,5 +22,7 @@ from kitties_test import views
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    path('', views.home, name="home")
+    path('', views.home, name="home"),
+    path('start_test/', views.start_test, name="start_test"),
+    path('next_question/<int:current_question_id>/<int:current_answer>', views.next_question, name="next_question"),
 ]

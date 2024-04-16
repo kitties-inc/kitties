@@ -1,0 +1,37 @@
+<div class="start-page">
+    <div class="content">
+        <h1>Take the quiz and find out what kind of kitty you are!</h1>
+        <a class="oval-button" href="{% url home %}">What Kitty Am I?</a>
+    </div>
+</div>
+
+
+<style>
+    .start-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .oval-button {
+        display: inline-block;
+        border-radius: 20px;
+        padding: 15px 30px;
+        font-size: 16px;
+        text-decoration: none;
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ccc;
+        transition: background-color 0.3s ease;
+    }
+
+    .oval-button:hover {
+        background-color: #ccc;
+    }
+</style>
+
