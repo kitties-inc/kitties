@@ -169,9 +169,10 @@ def next_question(request, current_question_id: int, current_answer: int):
 
         # обрабатываем результаты всего теста и выдаем сообщение с результатом
         # а че можно вспомогательные комменты удалить теперь да
-        result_id = match_result()  # use the result id to access result text and eventually result image
+        result_id = match_result()  # use the result id to access result text and image
         return render(request, "kitties_test/result.html",
-                      context={"info_msg": result_text[result_id]})
+                      context={"info_msg": result_text[result_id],
+                               "info_img": f"kitties_test/images/result_{result_id}.jpg"})
 
     # тут мы в том случае, если текущий вопрос был не последним
     # редиректнули пользователя на следующий вопрос, передав на фронт текст вопроса и номер вопроса
