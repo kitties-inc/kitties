@@ -52,6 +52,20 @@
             font-size: 24px;
             margin-top: 20px;
         }
+
+        .question-page {
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Определяем столбцовую ориентацию элементов */
+            align-items: center;
+            height: 100vh;
+        }
+
+        .answers {
+            display: flex;
+            flex-wrap: wrap; /* Разрешаем элементам переноситься на новую строку */
+            justify-content: center;
+        }
     </style>
 </head>
 <header>
@@ -61,7 +75,7 @@
 </header>
 <body>
 {% block content %}
-    
+
 {% endblock %}
 </body>
 </html>
