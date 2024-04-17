@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header__nav {
+            text-align: center; /* Выравнивание ссылок по центру */
+        }
+
+        .header__nav__link {
+            text-decoration: none;
+            color: #333; /* Цвет ссылок */
+            font-size: 24px; /* Размер шрифта */
+            margin: 0 10px; /* Отступ между ссылками */
+        }
+
+        .start-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .oval-button {
+            display: inline-block;
+            border-radius: 20px;
+            padding: 15px 30px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s ease;
+        }
+
+        .oval-button:hover {
+            background-color: #ccc;
+        }
+
+        .cat-image {
+            width: 300px; /* Adjust width as needed */
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .caption {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<header>
+    <div class="header__nav">
+        <a class="header__nav__link" href="{% url 'start_test' %}">To the beginning</a>
+    </div>
+</header>
+<body>
+{% block content %}
+    
+{% endblock %}
+</body>
+</html>

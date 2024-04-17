@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+{% extends 'kitties_test/base.html' %}
+{% block content %}
+    <body>
+    <div class="question-page">
+        <div class="question">
+            <h2>{{ question }}</h2>
+        </div>
+        <div class="answers">
+            <a class="oval-button" href="{% url 'next_question' question_id 1 %}">{{ options.0 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 2 %}">{{ options.1 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 3 %}">{{ options.2 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 4 %}">{{ options.3 }}</a>
+        </div>
+    </div>
+    </body>
+{% endblock %}
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 question = {
     1: "Do you like cats?",
@@ -150,10 +150,12 @@ def match_result() -> int:
 
 
 def home(request):  # вызывается при заходе на сайт, редиректит пользователя на главную страницу
+    answers.clear()
     return render(request, "kitties_test/home.html")
 
 
 def start_test(request):  # вызывается при нажатии начать тест на начальной странице, редиректит на 1 вопрос
+    answers.clear()
     return render(request, "kitties_test/question.html",
                   context={"question": question[1],
                            "options": options[1],
@@ -165,14 +167,15 @@ def next_question(request, current_question_id: int, current_answer: int):
     # выбрал ответ № current_answer в вопросе № current_question_id
     answers.append(current_answer)
 
-    if current_question_id == len(question):  # если текущий вопрос был последним, редиректим на страницу с результатом теста
+    if current_question_id == len(
+            question):  # если текущий вопрос был последним, редиректим на страницу с результатом теста
 
         # обрабатываем результаты всего теста и выдаем сообщение с результатом
         # а че можно вспомогательные комменты удалить теперь да
         result_id = match_result()  # use the result id to access result text and image
         return render(request, "kitties_test/result.html",
                       context={"info_msg": result_text[result_id],
-                               "info_img": f"kitties_test/images/result_{result_id}.jpg"})
+                               "info_img": f"result_{result_id}.jpg"})
 
     # тут мы в том случае, если текущий вопрос был не последним
     # редиректнули пользователя на следующий вопрос, передав на фронт текст вопроса и номер вопроса
@@ -180,4 +183,3 @@ def next_question(request, current_question_id: int, current_answer: int):
                   context={"question": question[current_question_id + 1],
                            "options": options[current_question_id + 1],
                            "question_id": current_question_id + 1})
-

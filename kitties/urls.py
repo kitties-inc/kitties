@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from kitties import settings
 from kitties_test import views
 
 urlpatterns = [
@@ -26,3 +29,8 @@ urlpatterns = [
     path('start_test/', views.start_test, name="start_test"),
     path('next_question/<int:current_question_id>/<int:current_answer>', views.next_question, name="next_question"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
