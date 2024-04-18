@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('', views.home, name="home"),
     path('start_test/', views.start_test, name="start_test"),
-    path('next_question/<int:current_question_id>/<int:current_answer>', views.next_question, name="next_question"),
+    path('next_question/<int:current_question_id>/<int:current_answer>/<int:session_id>', views.next_question, name="next_question"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

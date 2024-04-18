@@ -46,8 +46,6 @@ options = {
     ]
 }
 
-answers = []
-
 any_answer = {1, 2, 3, 4}
 
 results = [
@@ -134,3 +132,5 @@ result_text = [
     virus_result, boom_result, potato_result, fluffy_result, addict_result,
     duck_result, neutered_result, sphinx_result, silly_result
 ]
+
+answers = dict()

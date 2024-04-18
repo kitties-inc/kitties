@@ -8,10 +8,10 @@
             <h2>{{ question }}</h2>
         </div>
         <div class="answers">
-            <a class="oval-button" href="{% url 'next_question' question_id 1 %}">{{ options.0 }}</a>
-            <a class="oval-button" href="{% url 'next_question' question_id 2 %}">{{ options.1 }}</a>
-            <a class="oval-button" href="{% url 'next_question' question_id 3 %}">{{ options.2 }}</a>
-            <a class="oval-button" href="{% url 'next_question' question_id 4 %}">{{ options.3 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 1 session_id %}">{{ options.0 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 2 session_id %}">{{ options.1 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 3 session_id %}">{{ options.2 }}</a>
+            <a class="oval-button" href="{% url 'next_question' question_id 4 session_id %}">{{ options.3 }}</a>
         </div>
     </div>
     </body>
